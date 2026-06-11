@@ -1,78 +1,74 @@
-# BSAI.md
+# BSAI.md v1.0.1
 
-Before Scaling with AI is a portable Markdown method for reporting how AI agents are likely to interpret project documents before AI-assisted work scales.
+Before Scaling with AI is a portable Markdown method for reporting how AI agents are likely to interpret a target project artifact before AI-assisted work scales.
 
-BSAI reports apparent document type, relative document scope, likely agent interpretation, evidence, confidence, ambiguity, and human decisions required.
+BSAI does not recommend, authorize, approve, integrate, route, certify, or decide. BSAI ends at `Human Decisions Required`.
 
-BSAI does not recommend, authorize, approve, route, integrate, certify, or decide downstream use.
+## Core classifications
+
+| Classification | What it reports | Review environment |
+|---|---|---|
+| `Apparent Document Type` | What the target artifact appears to function as | Fresh context, target artifact only |
+| `Relative Document Scope` | How much of the project the target artifact appears to cover | Target artifact plus surrounding project context |
+
+Classify `Apparent Document Type` before `Relative Document Scope`.
+
+Use project context only after the type pass.
+
+BSAI assesses one target artifact at a time. Project context supports scope classification; it does not turn BSAI into whole-project governance, source-of-truth selection, document ranking, or downstream approval.
 
 ## Quickstart
 
-### Option 1 — Use only `BSAI.md`
+### Option 1: Download only `BSAI.md`
 
-Use this path for a lightweight agent review with one portable method file.
+Use this path for a lightweight agent review.
 
 1. Download `BSAI.md`.
-2. Place `BSAI.md` where the AI agent can read it.
-3. Give the AI agent the artifact or project document set under review.
-4. Give the AI agent the surrounding project context: folder context, related documents, project boundaries, timeline, and known ambiguities.
-5. Instruct the AI agent to read `BSAI.md` and produce a BSAI assessment.
-6. End at `Human Decisions Required`.
+2. Start a fresh session or fresh review context.
+3. Provide the target artifact.
+4. Ask the agent to classify `Apparent Document Type` from the target artifact alone.
+5. Provide the surrounding project context.
+6. Ask the agent to classify `Relative Document Scope`.
+7. End at `Human Decisions Required`.
 
-Human-only review uses the same path: read `BSAI.md`, assess the artifact, and write the same assessment fields manually.
-
-### Option 2 — Copy the full BSAI environment
+### Option 2: Copy the full BSAI environment
 
 Use this path for calibrated agent review inside a repository.
 
-Copy these files into the repository:
+1. Copy `BSAI.md`.
+2. Copy `templates/bsai-assessment-template.md`.
+3. Copy `examples/aligned-feature-spec-assessment.md`.
+4. Copy `examples/technical-spec-as-prd-assessment.md`.
+5. Copy `examples/research-note-scope-risk-assessment.md`.
+6. Copy `examples/design-note-overapplied-assessment.md`.
+7. Start a fresh session or fresh review context.
+8. Have the agent use `BSAI.md`, fill `templates/bsai-assessment-template.md`, and calibrate against the examples.
+9. End at `Human Decisions Required`.
+
+## Repository contents
 
 ```text
 BSAI.md
-templates/bsai-assessment-template.md
-examples/aligned-feature-spec-assessment.md
-examples/technical-spec-as-prd-assessment.md
-examples/research-note-scope-risk-assessment.md
-examples/design-note-overapplied-assessment.md
+README.md
+examples/
+  aligned-feature-spec-assessment.md
+  technical-spec-as-prd-assessment.md
+  research-note-scope-risk-assessment.md
+  design-note-overapplied-assessment.md
+templates/
+  bsai-assessment-template.md
 ```
 
-Then instruct the AI agent to:
-
-1. Read `BSAI.md`.
-2. Use `templates/bsai-assessment-template.md` as the output format.
-3. Use `examples/aligned-feature-spec-assessment.md` for aligned type/scope calibration.
-4. Use `examples/technical-spec-as-prd-assessment.md` for declared-type mismatch calibration.
-5. Use `examples/research-note-scope-risk-assessment.md` for research-context scope-risk calibration.
-6. Use `examples/design-note-overapplied-assessment.md` for over-applied design-note calibration.
-7. Produce a BSAI assessment only.
-8. End at `Human Decisions Required`.
-
-## Use cases
-
-Use `BSAI.md` before AI-assisted work relies on:
-
-- planning notes;
-- research notes;
-- product requirements;
-- specifications;
-- design notes;
-- architecture notes;
-- implementation guidance;
-- prompt packages;
-- documentation folders.
-
-Use `BSAI.md` when a document could be interpreted as stronger, broader, narrower, more authoritative, or more implementation-ready than its apparent type and relative scope support.
-
-## BSAI assessment outputs
+## What BSAI reports
 
 A BSAI assessment reports:
 
-- declared document type;
-- apparent document type;
-- relative document scope;
+- declared type;
+- apparent type;
+- relative scope;
 - type mismatch;
 - scope mismatch;
-- likely AI interpretation;
+- likely agent interpretation;
 - likely over-interpretation risk;
 - likely under-interpretation risk;
 - confidence;
@@ -81,30 +77,22 @@ A BSAI assessment reports:
 - ambiguity;
 - human decisions required.
 
-## Boundary
+## What BSAI does not do
+
+BSAI does not:
+
+- approve artifacts;
+- reject artifacts;
+- authorize implementation;
+- certify documents;
+- recommend downstream use;
+- select downstream tools;
+- integrate with downstream workflows;
+- rank source-of-truth documents;
+- resolve cross-document authority;
+- replace human judgment;
+- decide what happens next.
 
 BSAI is not the decision.
 
 BSAI is the warning label, interpretation report, and scope check before the decision.
-
-A BSAI assessment does not approve artifacts, reject artifacts, authorize implementation, certify documents, recommend downstream use, select downstream tools, integrate with downstream workflows, replace human judgment, or decide what happens next.
-
-## Repository documents
-
-`BSAI.md` defines the portable method.
-
-`README.md` provides quickstart instructions and repository navigation.
-
-`templates/bsai-assessment-template.md` provides the reusable assessment output format.
-
-`examples/aligned-feature-spec-assessment.md` shows an aligned assessment where declared type, apparent type, and relative scope align while human decision remains required.
-
-`examples/technical-spec-as-prd-assessment.md` shows an apparent-type mismatch where a document labeled as a technical specification functions more like a product requirements document.
-
-`examples/research-note-scope-risk-assessment.md` shows a scope-risk assessment where research context risks being treated as implementation authority.
-
-`examples/design-note-overapplied-assessment.md` shows a scope mismatch where a narrow design note risks being applied beyond its apparent scope.
-
-## About
-
-BSAI.md is a portable Markdown method for reporting how AI agents are likely to interpret project documents before AI-assisted work scales.

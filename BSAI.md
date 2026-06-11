@@ -2,9 +2,9 @@
 
 ## Before Scaling with AI: Apparent Type, Relative Scope, and Human Decision
 
-**Status:** Release 1.0
-**Format:** Portable Markdown method
-**Intended placement:** Repository root, documentation folder, project folder, prompt package, or review workspace
+**Status:** Release 1.0.1  
+**Format:** Portable Markdown method  
+**Intended placement:** Repository root, documentation folder, project folder, prompt package, or review workspace  
 **Primary purpose:** Report likely AI interpretation of project artifacts before AI-assisted work scales
 
 ---
@@ -29,7 +29,19 @@ The core identity is:
 
 ---
 
-## 2. Core Principle
+## 2. Artifact
+
+In BSAI, an **artifact** is any project material that can influence AI-assisted work.
+
+Artifacts include documents, notes, specifications, requirements, design records, architecture notes, research notes, prompt packages, schemas, examples, plans, roadmaps, standards drafts, and instruction bundles.
+
+A BSAI assessment reviews one target artifact at a time.
+
+Project context is used only for Relative Document Scope. It is not used to turn BSAI into a whole-project governance review.
+
+---
+
+## 3. Core Principle
 
 BSAI does not decide what an artifact truly is.
 
@@ -54,7 +66,7 @@ An artifact's authority is a human, team, or governance decision. BSAI exposes a
 
 ---
 
-## 3. Non-Decision Constraint
+## 4. Non-Decision Constraint
 
 A BSAI assessment must not approve, reject, authorize, certify, rank, route, recommend, or prescribe later use.
 
@@ -80,7 +92,31 @@ BSAI is not the decision layer.
 
 ---
 
-## 4. Why BSAI Exists
+## 5. Review Environment and Order
+
+A BSAI assessment begins in a fresh review context.
+
+The reviewer or agent does not rely on prior conversation history, author intent, roadmap assumptions, product plans, or downstream implementation goals unless those materials are explicitly included in the review environment.
+
+BSAI uses this order:
+
+1. **Fresh review context** — start without unstated prior assumptions.
+2. **Apparent Document Type** — review the target artifact in isolation.
+3. **Relative Document Scope** — add surrounding project context after the type pass.
+4. **Agent-Interpretation Risk** — report likely overuse, underuse, and invented missing information.
+5. **Human Decisions Required** — identify decisions without answering them.
+
+Apparent Document Type comes before Relative Document Scope.
+
+The type pass uses the target artifact alone.
+
+The scope pass uses the target artifact plus the surrounding project context needed to understand relative coverage.
+
+BSAI does not perform full multi-artifact governance, resolve cross-document authority, rank source-of-truth documents, or decide which artifact controls later work.
+
+---
+
+## 6. Why BSAI Exists
 
 Modern AI-assisted workflows turn written artifacts into execution inputs.
 
@@ -102,7 +138,7 @@ Before AI-assisted work scales, teams need a lightweight way to inspect how an a
 
 BSAI provides that interpretation method.
 
-BSAI is especially useful when a project contains multiple artifacts with overlapping, unclear, or misleading roles, such as:
+BSAI is especially useful when a project contains artifacts with overlapping, unclear, or misleading roles, such as:
 
 - product briefs;
 - PRDs;
@@ -121,7 +157,7 @@ BSAI is especially useful when a project contains multiple artifacts with overla
 
 ---
 
-## 5. What BSAI Is
+## 7. What BSAI Is
 
 BSAI is:
 
@@ -149,7 +185,7 @@ BSAI does not replace the human decision.
 
 ---
 
-## 6. What BSAI Is Not
+## 8. What BSAI Is Not
 
 BSAI is not:
 
@@ -169,6 +205,10 @@ BSAI is not:
 - a guarantee of implementation fitness;
 - a guarantee of external interoperability;
 - a replacement for human judgment.
+
+Do not use BSAI as a substitute for code review, implementation approval, artifact ranking, source-of-truth selection, or downstream routing.
+
+Do not use BSAI to force every artifact into a specification role.
 
 BSAI does not say:
 
@@ -196,18 +236,25 @@ It says:
 
 ---
 
-## 7. The Two Core Assessments
+## 9. The Two Core Assessments
 
 BSAI centers on two assessments:
 
 1. **Apparent Document Type**
 2. **Relative Document Scope**
 
-These are not absolute classifications. They are reviewable interpretations.
+These are not absolute classifications. They are reviewable interpretations that inform later human or downstream decisions.
 
-### 7.1 Apparent Document Type
+| Assessment | Question | Review environment |
+|---|---|---|
+| Apparent Document Type | What does the artifact appear to function as? | Target artifact in isolation |
+| Relative Document Scope | How much of the project does the artifact appear to cover? | Target artifact plus surrounding project context |
+
+### 9.1 Apparent Document Type
 
 **Apparent Document Type** describes what kind of document an artifact appears to be, regardless of what it calls itself.
+
+The Apparent Document Type pass is completed before project context is added.
 
 The guiding question is:
 
@@ -253,9 +300,11 @@ Apparent Document Type prevents type mismatch from remaining hidden.
 
 An artifact is not treated as a specification merely because it calls itself one. A research note is not treated as binding requirements merely because it contains strong claims. A design note is not treated as a project-wide source of truth if it only supports one design decision.
 
-### 7.2 Relative Document Scope
+### 9.2 Relative Document Scope
 
 **Relative Document Scope** describes how much of the project an artifact appears to cover in relation to the surrounding artifact set.
+
+The Relative Document Scope pass happens after the Apparent Document Type pass.
 
 The guiding question is:
 
@@ -263,7 +312,7 @@ The guiding question is:
 
 In BSAI, **govern** is descriptive, not prescriptive. It describes the portion of a project an artifact appears to govern, constrain, describe, or inform when interpreted by an AI system. It does not mean BSAI grants governing authority.
 
-Relative Document Scope usually requires comparison against the surrounding project folder, artifact set, timeline, or documentation structure.
+Relative Document Scope requires comparison against the surrounding project folder, artifact set, timeline, or documentation structure.
 
 An artifact appears to cover one or more of these scopes:
 
@@ -285,7 +334,7 @@ A narrow design note is not treated as the source of truth for an entire product
 
 ---
 
-## 8. Scope Bands
+## 10. Scope Bands
 
 BSAI avoids fake precision. It does not require exact percentages unless the project has already defined them.
 
@@ -319,7 +368,7 @@ Possible scope categories include:
 
 ---
 
-## 9. Type and Scope Mismatch
+## 11. Type and Scope Mismatch
 
 BSAI is most useful when it detects mismatch.
 
@@ -341,7 +390,7 @@ Resolution requires human decision.
 
 ---
 
-## 10. Agent-Interpretation Risk
+## 12. Agent-Interpretation Risk
 
 BSAI focuses on how an AI system is likely to interpret the artifact.
 
@@ -364,7 +413,7 @@ The purpose is to force the interpretation problem into the open before scaling.
 
 ---
 
-## 11. Confidence and Evidence
+## 13. Confidence and Evidence
 
 Every BSAI assessment includes confidence.
 
@@ -390,17 +439,24 @@ Uncertainty is part of the output.
 
 ---
 
-## 12. BSAI Assessment Output
+## 14. BSAI Assessment Output
 
 A BSAI assessment produces a report in this structure:
 
 ```markdown
 # BSAI Assessment
 
+## Review Environment
+- Fresh Review Context:
+- Target Artifact:
+- Type Pass Context: Target artifact only
+- Scope Pass Context:
+- Review Order: Apparent Document Type before Relative Document Scope
+
 ## Artifact
 - File:
 - Declared Type:
-- Project Context Reviewed:
+- Declared Status:
 
 ## Apparent Document Type
 - Apparent Type:
@@ -412,6 +468,7 @@ A BSAI assessment produces a report in this structure:
 ## Relative Document Scope
 - Scope Band:
 - Scope Category:
+- Project Context Reviewed:
 - Confidence:
 - Evidence:
 - Counter-Evidence:
@@ -423,7 +480,7 @@ A BSAI assessment produces a report in this structure:
 - Likely under-interpretation risk:
 - Missing information the agent is likely to invent:
 
-## Human Decision Required
+## Human Decisions Required
 - Does this artifact remain contextual?
 - Does this artifact require revision?
 - Does this artifact require splitting or merging?
@@ -437,7 +494,7 @@ BSAI does not grant implementation authority. This assessment only reports appar
 
 ---
 
-## 13. How to Use BSAI.md
+## 15. How to Use BSAI.md
 
 Use BSAI before asking an AI system to:
 
@@ -453,15 +510,23 @@ Use BSAI before asking an AI system to:
 
 The simplest instruction is:
 
-> Apply `BSAI.md` to the project artifacts. Report apparent document type, relative document scope, mismatch risk, likely agent interpretation, evidence, confidence, ambiguity, and human decisions required. Do not approve, reject, authorize, recommend, route, or decide later use.
+> Apply `BSAI.md` to the target artifact. Start in a fresh review context. Classify Apparent Document Type from the target artifact alone. Then add project context to classify Relative Document Scope. Report mismatch risk, likely agent interpretation, evidence, confidence, ambiguity, and human decisions required. Do not approve, reject, authorize, recommend, route, or decide later use.
 
 ---
 
-## 14. BSAI Review Procedure
+## 16. BSAI Review Procedure
 
 Use this procedure to complete a BSAI assessment.
 
-### Step 1: Identify declared type
+### Step 1: Start a fresh review context
+
+Ask:
+
+> What information is present in the target artifact and explicitly supplied review environment?
+
+Exclude prior conversation assumptions, author intent, project plans, and downstream goals unless they appear in the review environment.
+
+### Step 2: Identify declared type
 
 Ask:
 
@@ -469,15 +534,23 @@ Ask:
 
 Record title, filename, heading structure, and any explicit status claims.
 
-### Step 2: Identify apparent type
+### Step 3: Identify apparent type from the artifact alone
 
 Ask:
 
-> What does the artifact appear to function as?
+> What does the artifact appear to function as when read in isolation?
 
 Compare structure, language, specificity, evidence, and implied use.
 
-### Step 3: Identify relative scope
+### Step 4: Add project context for relative scope
+
+Ask:
+
+> What surrounding project materials are included for scope interpretation?
+
+Add only the context used to understand how much of the project the target artifact appears to cover.
+
+### Step 5: Identify relative scope
 
 Ask:
 
@@ -485,7 +558,7 @@ Ask:
 
 Use a coarse scope band and scope category.
 
-### Step 4: Identify mismatch
+### Step 6: Identify mismatch
 
 Ask:
 
@@ -493,7 +566,7 @@ Ask:
 
 Report mismatch without resolving it.
 
-### Step 5: Identify agent-interpretation risk
+### Step 7: Identify agent-interpretation risk
 
 Ask:
 
@@ -501,7 +574,7 @@ Ask:
 
 Focus on apparent authority, scope expansion, and invented missing information.
 
-### Step 6: Identify required human decision
+### Step 8: Identify required human decision
 
 Ask:
 
@@ -511,7 +584,7 @@ BSAI stops here.
 
 ---
 
-## 15. Portability
+## 17. Portability
 
 BSAI is intentionally a single Markdown method.
 
@@ -534,7 +607,7 @@ BSAI remains independent of any specific later method, tool, standard, agent, or
 
 ---
 
-## 16. Final Boundary
+## 18. Final Boundary
 
 BSAI is not the decision.
 

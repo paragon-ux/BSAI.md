@@ -1,9 +1,16 @@
 # BSAI Assessment
 
+## Review Environment
+- Fresh Review Context:
+- Target Artifact:
+- Type Pass Context: Target artifact only
+- Scope Pass Context:
+- Review Order: Apparent Document Type before Relative Document Scope
+
 ## Artifact
 - File:
 - Declared Type:
-- Project Context Reviewed:
+- Declared Status:
 
 ## Apparent Document Type
 - Apparent Type:
@@ -15,6 +22,7 @@
 ## Relative Document Scope
 - Scope Band:
 - Scope Category:
+- Project Context Reviewed:
 - Confidence:
 - Evidence:
 - Counter-Evidence:
@@ -26,7 +34,7 @@
 - Likely under-interpretation risk:
 - Missing information the agent is likely to invent:
 
-## Human Decision Required
+## Human Decisions Required
 - Does this artifact remain contextual?
 - Does this artifact require revision?
 - Does this artifact require splitting or merging?
