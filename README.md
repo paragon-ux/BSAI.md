@@ -1,6 +1,6 @@
-# BSAI.md v1.0.1
+# BSAI.md v1.0.2
 
-Before Scaling with AI is a portable Markdown method for reporting how AI agents are likely to interpret a target project artifact before AI-assisted work scales.
+Before Scaling with AI is a portable Markdown method for reporting how AI agents are likely to interpret one target project artifact before AI-assisted work scales.
 
 BSAI does not recommend, authorize, approve, integrate, route, certify, or decide. BSAI ends at `Human Decisions Required`.
 
@@ -19,31 +19,17 @@ BSAI assesses one target artifact at a time. Project context supports scope clas
 
 ## Quickstart
 
-### Option 1: Download only `BSAI.md`
-
-Use this path for a lightweight agent review.
-
-1. Download `BSAI.md`.
-2. Start a fresh session or fresh review context.
-3. Provide the target artifact.
-4. Ask the agent to classify `Apparent Document Type` from the target artifact alone.
-5. Provide the surrounding project context.
-6. Ask the agent to classify `Relative Document Scope`.
-7. End at `Human Decisions Required`.
-
-### Option 2: Copy the full BSAI environment
-
-Use this path for calibrated agent review inside a repository.
-
 1. Copy `BSAI.md`.
 2. Copy `templates/bsai-assessment-template.md`.
-3. Copy `examples/aligned-feature-spec-assessment.md`.
-4. Copy `examples/technical-spec-as-prd-assessment.md`.
-5. Copy `examples/research-note-scope-risk-assessment.md`.
-6. Copy `examples/design-note-overapplied-assessment.md`.
-7. Start a fresh session or fresh review context.
-8. Have the agent use `BSAI.md`, fill `templates/bsai-assessment-template.md`, and calibrate against the examples.
+3. Copy `examples/README.md`.
+4. Copy the files in `examples/`.
+5. Start a fresh session or fresh review context.
+6. Read `BSAI.md`.
+7. Use `templates/bsai-assessment-template.md` as the assessment output format.
+8. Use `examples/README.md` and the example assessments for calibration.
 9. End at `Human Decisions Required`.
+
+For lightweight manual setup, `BSAI.md` can be used alone. For calibrated agent review, use `BSAI.md`, `templates/bsai-assessment-template.md`, `examples/README.md`, and the example assessments together.
 
 ## Repository contents
 
@@ -51,10 +37,15 @@ Use this path for calibrated agent review inside a repository.
 BSAI.md
 README.md
 examples/
-  aligned-feature-spec-assessment.md
-  technical-spec-as-prd-assessment.md
-  research-note-scope-risk-assessment.md
-  design-note-overapplied-assessment.md
+  README.md
+  band-0-no-implementation-scope-assessment.md
+  band-1-local-context-assessment.md
+  band-2-design-note-overapplied-assessment.md
+  band-3-feature-spec-assessment.md
+  band-3-technical-spec-as-prd-assessment.md
+  band-4-subsystem-architecture-assessment.md
+  band-5-project-wide-product-brief-assessment.md
+  unclear-confidence-conflicting-artifact-assessment.md
 templates/
   bsai-assessment-template.md
 ```
